@@ -67,21 +67,27 @@ namespace CashClock
             this.stopWatchLabel.Text = string.Format("{0:hh\\:mm\\:ss}", stopWatch.Elapsed);
             this.stopWatchLabel2.Text = string.Format("{0:fff}", stopWatch.Elapsed);
 
+
+
             // Money Label
             double money;
+            this.wageInfoLabel.Text = string.Format("{0} {1} per ", Settings1.Default.wage, Settings1.Default.currency); // Wage information Label
             switch (Settings1.Default.per)
             {
-                case 1:
+                case 0:
                     money = double.Parse(stopWatch.Elapsed.TotalHours.ToString()) * Settings1.Default.wage;
                     this.moneyLabel.Text = string.Format("{0:f2} {1}", money, Settings1.Default.currency);
+                    this.wageInfoLabel.Text += "hour";
                     break;
-                case 2: 
+                case 1: 
                     money = double.Parse(stopWatch.Elapsed.TotalMinutes.ToString()) * Settings1.Default.wage;
                     this.moneyLabel.Text = string.Format("{0:f2} {1}", money, Settings1.Default.currency);
+                    this.wageInfoLabel.Text += "minute";
                     break;
-                case 3:
+                case 2:
                     money = double.Parse(stopWatch.Elapsed.TotalSeconds.ToString()) * Settings1.Default.wage;
                     this.moneyLabel.Text = string.Format("{0:f2} {1}", money, Settings1.Default.currency);
+                    this.wageInfoLabel.Text += "second";
                     break;
             }
             
@@ -102,6 +108,9 @@ namespace CashClock
                         stopWatch.Stop();
                 }
             }
+
+
+            
         }
 
         // This is making form movable      [ https://stackoverflow.com/questions/1592876/make-a-borderless-form-movable ]

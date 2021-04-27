@@ -92,7 +92,7 @@ namespace CashClock
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Settings1.Default.per = comboBox1.SelectedIndex+1;
+            Settings1.Default.per = comboBox1.SelectedIndex;
         }
     }
 }

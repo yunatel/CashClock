@@ -39,12 +39,13 @@ namespace CashClock
             this.moneyLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.stopWatchLabel2 = new System.Windows.Forms.Label();
+            this.wageInfoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SettingsButton
             // 
             this.SettingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SettingsButton.Location = new System.Drawing.Point(269, 99);
+            this.SettingsButton.Location = new System.Drawing.Point(252, 99);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(75, 23);
             this.SettingsButton.TabIndex = 0;
@@ -55,7 +56,7 @@ namespace CashClock
             // StartButton
             // 
             this.StartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.StartButton.Location = new System.Drawing.Point(269, 12);
+            this.StartButton.Location = new System.Drawing.Point(252, 12);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(75, 23);
             this.StartButton.TabIndex = 1;
@@ -66,7 +67,7 @@ namespace CashClock
             // PauseButton
             // 
             this.PauseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PauseButton.Location = new System.Drawing.Point(269, 41);
+            this.PauseButton.Location = new System.Drawing.Point(252, 41);
             this.PauseButton.Name = "PauseButton";
             this.PauseButton.Size = new System.Drawing.Size(75, 23);
             this.PauseButton.TabIndex = 2;
@@ -77,7 +78,7 @@ namespace CashClock
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(269, 70);
+            this.button2.Location = new System.Drawing.Point(252, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -131,18 +132,33 @@ namespace CashClock
             this.stopWatchLabel2.ForeColor = System.Drawing.SystemColors.Control;
             this.stopWatchLabel2.Location = new System.Drawing.Point(210, 37);
             this.stopWatchLabel2.Name = "stopWatchLabel2";
-            this.stopWatchLabel2.Size = new System.Drawing.Size(24, 20);
+            this.stopWatchLabel2.Size = new System.Drawing.Size(36, 20);
             this.stopWatchLabel2.TabIndex = 6;
-            this.stopWatchLabel2.Text = "fff";
+            this.stopWatchLabel2.Text = "000";
             this.stopWatchLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            // 
+            // wageInfoLabel
+            // 
+            this.wageInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.wageInfoLabel.ForeColor = System.Drawing.Color.White;
+            this.wageInfoLabel.Location = new System.Drawing.Point(-5, 111);
+            this.wageInfoLabel.Name = "wageInfoLabel";
+            this.wageInfoLabel.Size = new System.Drawing.Size(250, 15);
+            this.wageInfoLabel.TabIndex = 7;
+            this.wageInfoLabel.Text = "10 $ per hour";
+            this.wageInfoLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.wageInfoLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(356, 133);
+            this.ClientSize = new System.Drawing.Size(339, 135);
+            this.Controls.Add(this.wageInfoLabel);
             this.Controls.Add(this.moneyLabel);
             this.Controls.Add(this.stopWatchLabel2);
             this.Controls.Add(this.stopWatchLabel);
@@ -152,9 +168,10 @@ namespace CashClock
             this.Controls.Add(this.SettingsButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(372, 172);
+            this.MaximumSize = new System.Drawing.Size(512, 178);
+            this.MinimumSize = new System.Drawing.Size(355, 172);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "CashClock";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
@@ -172,5 +189,6 @@ namespace CashClock
         private System.Windows.Forms.Label moneyLabel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label stopWatchLabel2;
+        private System.Windows.Forms.Label wageInfoLabel;
     }
 }

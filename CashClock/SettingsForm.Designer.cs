@@ -98,7 +98,7 @@ namespace CashClock
             this.processesListBox.ItemHeight = 15;
             this.processesListBox.Location = new System.Drawing.Point(3, 18);
             this.processesListBox.Name = "processesListBox";
-            this.processesListBox.Size = new System.Drawing.Size(232, 274);
+            this.processesListBox.Size = new System.Drawing.Size(158, 139);
             this.processesListBox.TabIndex = 4;
             this.processesListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.processesListBox_MouseDoubleClick);
             // 
@@ -117,7 +117,7 @@ namespace CashClock
             // processesRefreshButton
             // 
             this.processesRefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.processesRefreshButton.Location = new System.Drawing.Point(3, 306);
+            this.processesRefreshButton.Location = new System.Drawing.Point(3, 176);
             this.processesRefreshButton.Name = "processesRefreshButton";
             this.processesRefreshButton.Size = new System.Drawing.Size(75, 23);
             this.processesRefreshButton.TabIndex = 6;
@@ -146,13 +146,13 @@ namespace CashClock
             this.chosedProcessesListBox.ItemHeight = 15;
             this.chosedProcessesListBox.Location = new System.Drawing.Point(3, 18);
             this.chosedProcessesListBox.Name = "chosedProcessesListBox";
-            this.chosedProcessesListBox.Size = new System.Drawing.Size(228, 274);
+            this.chosedProcessesListBox.Size = new System.Drawing.Size(155, 139);
             this.chosedProcessesListBox.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 84);
+            this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 15);
             this.label1.TabIndex = 9;
@@ -161,7 +161,7 @@ namespace CashClock
             // addProcessButton
             // 
             this.addProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addProcessButton.Location = new System.Drawing.Point(160, 306);
+            this.addProcessButton.Location = new System.Drawing.Point(86, 176);
             this.addProcessButton.Name = "addProcessButton";
             this.addProcessButton.Size = new System.Drawing.Size(75, 23);
             this.addProcessButton.TabIndex = 10;
@@ -172,7 +172,7 @@ namespace CashClock
             // deleteProcessButton
             // 
             this.deleteProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteProcessButton.Location = new System.Drawing.Point(156, 306);
+            this.deleteProcessButton.Location = new System.Drawing.Point(83, 176);
             this.deleteProcessButton.Name = "deleteProcessButton";
             this.deleteProcessButton.Size = new System.Drawing.Size(75, 23);
             this.deleteProcessButton.TabIndex = 11;
@@ -185,7 +185,7 @@ namespace CashClock
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(12, 102);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 56);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -202,15 +202,15 @@ namespace CashClock
             this.splitContainer1.Panel2.Controls.Add(this.chosedProcessesListBox);
             this.splitContainer1.Panel2.Controls.Add(this.labelChosedProcesses);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(476, 332);
-            this.splitContainer1.SplitterDistance = 238;
+            this.splitContainer1.Size = new System.Drawing.Size(329, 202);
+            this.splitContainer1.SplitterDistance = 164;
             this.splitContainer1.TabIndex = 12;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 473);
+            this.ClientSize = new System.Drawing.Size(349, 270);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.perLabel);
