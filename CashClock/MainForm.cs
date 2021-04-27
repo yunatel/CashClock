@@ -62,12 +62,31 @@ namespace CashClock
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
+            // StopWatch Label
             this.stopWatchLabel.Text = string.Format("{0:hh\\:mm\\:ss}", stopWatch.Elapsed);
             this.stopWatchLabel2.Text = string.Format("{0:fff}", stopWatch.Elapsed);
-            double money = double.Parse(stopWatch.Elapsed.TotalHours.ToString()) * Settings1.Default.wage;
-            this.moneyLabel.Text = string.Format("{0:f2} {1}", money, Settings1.Default.currency);
-            //this.stopWatchLabel.Text = string.Format("{0:hh\\:mm\\:ss\\:fff}", stopWatch.Elapsed);
 
+            // Money Label
+            double money;
+            switch (Settings1.Default.per)
+            {
+                case 1:
+                    money = double.Parse(stopWatch.Elapsed.TotalHours.ToString()) * Settings1.Default.wage;
+                    this.moneyLabel.Text = string.Format("{0:f2} {1}", money, Settings1.Default.currency);
+                    break;
+                case 2: 
+                    money = double.Parse(stopWatch.Elapsed.TotalMinutes.ToString()) * Settings1.Default.wage;
+                    this.moneyLabel.Text = string.Format("{0:f2} {1}", money, Settings1.Default.currency);
+                    break;
+                case 3:
+                    money = double.Parse(stopWatch.Elapsed.TotalSeconds.ToString()) * Settings1.Default.wage;
+                    this.moneyLabel.Text = string.Format("{0:f2} {1}", money, Settings1.Default.currency);
+                    break;
+            }
+            
+
+            // Main mechanic
             if ((choosedProcessesName.Count > 0)&&releaseStopwatch)
             {
                 if (choosedProcessesName.Contains(Program.GetActiveProcess().ProcessName)
@@ -84,5 +103,23 @@ namespace CashClock
                 }
             }
         }
+
+        // This is making form movable      [ https://stackoverflow.com/questions/1592876/make-a-borderless-form-movable ]
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
     }
 }

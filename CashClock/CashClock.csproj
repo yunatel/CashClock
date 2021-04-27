@@ -4,7 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>CashClock.ico</ApplicationIcon>
+    <ApplicationIcon></ApplicationIcon>
+    <Authors>yunatel</Authors>
+    <Company />
+    <Description>Simple Stopwatch that can run only if choosed process is foreground</Description>
+    <RepositoryUrl>https://github.com/yunatel/CashClock</RepositoryUrl>
+    <PackageIcon>CashClock.ai</PackageIcon>
+    <Version>0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +25,10 @@
     <None Update="Settings1.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="..\..\..\..\Desktop\CashClock.ai">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 

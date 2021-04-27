@@ -78,6 +78,7 @@ namespace CashClock
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(85, 23);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // perLabel
             // 
@@ -97,7 +98,7 @@ namespace CashClock
             this.processesListBox.ItemHeight = 15;
             this.processesListBox.Location = new System.Drawing.Point(3, 18);
             this.processesListBox.Name = "processesListBox";
-            this.processesListBox.Size = new System.Drawing.Size(232, 394);
+            this.processesListBox.Size = new System.Drawing.Size(232, 274);
             this.processesListBox.TabIndex = 4;
             this.processesListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.processesListBox_MouseDoubleClick);
             // 
@@ -116,7 +117,7 @@ namespace CashClock
             // processesRefreshButton
             // 
             this.processesRefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.processesRefreshButton.Location = new System.Drawing.Point(3, 423);
+            this.processesRefreshButton.Location = new System.Drawing.Point(3, 306);
             this.processesRefreshButton.Name = "processesRefreshButton";
             this.processesRefreshButton.Size = new System.Drawing.Size(75, 23);
             this.processesRefreshButton.TabIndex = 6;
@@ -145,7 +146,7 @@ namespace CashClock
             this.chosedProcessesListBox.ItemHeight = 15;
             this.chosedProcessesListBox.Location = new System.Drawing.Point(3, 18);
             this.chosedProcessesListBox.Name = "chosedProcessesListBox";
-            this.chosedProcessesListBox.Size = new System.Drawing.Size(473, 394);
+            this.chosedProcessesListBox.Size = new System.Drawing.Size(228, 274);
             this.chosedProcessesListBox.TabIndex = 7;
             // 
             // label1
@@ -160,7 +161,7 @@ namespace CashClock
             // addProcessButton
             // 
             this.addProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addProcessButton.Location = new System.Drawing.Point(160, 423);
+            this.addProcessButton.Location = new System.Drawing.Point(160, 306);
             this.addProcessButton.Name = "addProcessButton";
             this.addProcessButton.Size = new System.Drawing.Size(75, 23);
             this.addProcessButton.TabIndex = 10;
@@ -171,7 +172,7 @@ namespace CashClock
             // deleteProcessButton
             // 
             this.deleteProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteProcessButton.Location = new System.Drawing.Point(401, 423);
+            this.deleteProcessButton.Location = new System.Drawing.Point(156, 306);
             this.deleteProcessButton.Name = "deleteProcessButton";
             this.deleteProcessButton.Size = new System.Drawing.Size(75, 23);
             this.deleteProcessButton.TabIndex = 11;
@@ -201,7 +202,7 @@ namespace CashClock
             this.splitContainer1.Panel2.Controls.Add(this.chosedProcessesListBox);
             this.splitContainer1.Panel2.Controls.Add(this.labelChosedProcesses);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(721, 449);
+            this.splitContainer1.Size = new System.Drawing.Size(476, 332);
             this.splitContainer1.SplitterDistance = 238;
             this.splitContainer1.TabIndex = 12;
             // 
@@ -209,13 +210,14 @@ namespace CashClock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 590);
+            this.ClientSize = new System.Drawing.Size(496, 473);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.perLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.wageTextBox);
             this.Controls.Add(this.currencyTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
