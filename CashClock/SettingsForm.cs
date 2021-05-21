@@ -52,16 +52,15 @@ namespace CashClock
 
         private void addProcessButton_Click(object sender, EventArgs e)
         {
-            MainForm.choosedProcessesName.Add(processesListBox.SelectedItem.ToString());
-
+                MainForm.choosedProcessesName.AddS(processesListBox.SelectedItem.ToString());
         }
         private void processesListBox_MouseDoubleClick(object sender, EventArgs e)
         {
-            MainForm.choosedProcessesName.Add(processesListBox.SelectedItem.ToString());
+                MainForm.choosedProcessesName.AddS(processesListBox.SelectedItem.ToString());
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm.choosedProcessesName.Add(addByNameTextBox.Text.ToString());
+                MainForm.choosedProcessesName.AddS(addByNameTextBox.Text.ToString());
         }
 
         private void deletoProcessButton_Click(object sender, EventArgs e)
