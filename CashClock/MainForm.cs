@@ -5,34 +5,54 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace CashClock
 {
-    
     public partial class MainForm : Form
     {
         public static BindingList<string> choosedProcessesName = new BindingList<string>();
         private bool releaseStopwatch;
 
+
         private System.Diagnostics.Stopwatch stopWatch;
 
-        public MainForm()
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+        [DllImport("user32.dll")]
+        private static extern Int32 GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+        public static System.Diagnostics.Process GetActiveProcess()
         {
-            InitializeComponent();
-
+            //http://www.blackwasp.co.uk/GetActiveProcess.aspx
+            IntPtr hwnd = GetForegroundWindow();
+            return hwnd != null ? GetProcessByHandle(hwnd) : null;
+        }
+        private static System.Diagnostics.Process GetProcessByHandle(IntPtr hwnd)
+        {
+            try
+            {
+                uint processID;
+                GetWindowThreadProcessId(hwnd, out processID);
+                return System.Diagnostics.Process.GetProcessById((int)processID);
+            }
+            catch { return null; }
         }
 
         SettingsForm settingsForm;
+        public MainForm()
+        {
+            InitializeComponent();
+        }
 
         private void SettingsButton_Click(object sender, EventArgs e)
-        {
-            settingsForm = new SettingsForm();
-            settingsForm.Show();
+        { 
+            settingsForm.ShowDialog();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             stopWatch = new System.Diagnostics.Stopwatch();
+            settingsForm = new SettingsForm();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -95,7 +115,7 @@ namespace CashClock
             // Main mechanic
             if ((choosedProcessesName.Count > 0)&&releaseStopwatch)
             {
-                if (choosedProcessesName.Contains(Program.GetActiveProcess().ProcessName)
+                if (choosedProcessesName.Contains(GetActiveProcess().ProcessName)
                     && !stopWatch.IsRunning)
                 {
                     
@@ -103,7 +123,7 @@ namespace CashClock
                 }
                 else
                 {
-                    if (!choosedProcessesName.Contains(Program.GetActiveProcess().ProcessName)
+                    if (!choosedProcessesName.Contains(GetActiveProcess().ProcessName)
                         && stopWatch.IsRunning)
                         stopWatch.Stop();
                 }

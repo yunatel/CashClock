@@ -43,6 +43,10 @@ namespace CashClock
             this.addProcessButton = new System.Windows.Forms.Button();
             this.deleteProcessButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.addByNameButton = new System.Windows.Forms.Button();
+            this.addByNameTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,7 +55,7 @@ namespace CashClock
             // 
             // currencyTextBox
             // 
-            this.currencyTextBox.Location = new System.Drawing.Point(12, 12);
+            this.currencyTextBox.Location = new System.Drawing.Point(12, 31);
             this.currencyTextBox.MaxLength = 3;
             this.currencyTextBox.Name = "currencyTextBox";
             this.currencyTextBox.Size = new System.Drawing.Size(46, 23);
@@ -60,7 +64,7 @@ namespace CashClock
             // 
             // wageTextBox
             // 
-            this.wageTextBox.Location = new System.Drawing.Point(65, 12);
+            this.wageTextBox.Location = new System.Drawing.Point(65, 31);
             this.wageTextBox.Name = "wageTextBox";
             this.wageTextBox.Size = new System.Drawing.Size(152, 23);
             this.wageTextBox.TabIndex = 1;
@@ -74,7 +78,7 @@ namespace CashClock
             "hour",
             "minute",
             "second"});
-            this.comboBox1.Location = new System.Drawing.Point(254, 12);
+            this.comboBox1.Location = new System.Drawing.Point(254, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(85, 23);
             this.comboBox1.TabIndex = 2;
@@ -83,7 +87,8 @@ namespace CashClock
             // perLabel
             // 
             this.perLabel.AutoSize = true;
-            this.perLabel.Location = new System.Drawing.Point(223, 15);
+            this.perLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.perLabel.Location = new System.Drawing.Point(223, 34);
             this.perLabel.Name = "perLabel";
             this.perLabel.Size = new System.Drawing.Size(24, 15);
             this.perLabel.TabIndex = 3;
@@ -98,7 +103,7 @@ namespace CashClock
             this.processesListBox.ItemHeight = 15;
             this.processesListBox.Location = new System.Drawing.Point(3, 18);
             this.processesListBox.Name = "processesListBox";
-            this.processesListBox.Size = new System.Drawing.Size(158, 139);
+            this.processesListBox.Size = new System.Drawing.Size(206, 199);
             this.processesListBox.TabIndex = 4;
             this.processesListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.processesListBox_MouseDoubleClick);
             // 
@@ -108,16 +113,17 @@ namespace CashClock
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelProcesses.AutoSize = true;
+            this.labelProcesses.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelProcesses.Location = new System.Drawing.Point(3, 0);
             this.labelProcesses.Name = "labelProcesses";
-            this.labelProcesses.Size = new System.Drawing.Size(58, 15);
+            this.labelProcesses.Size = new System.Drawing.Size(94, 15);
             this.labelProcesses.TabIndex = 5;
-            this.labelProcesses.Text = "Processes";
+            this.labelProcesses.Text = "Active processes";
             // 
             // processesRefreshButton
             // 
             this.processesRefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.processesRefreshButton.Location = new System.Drawing.Point(3, 176);
+            this.processesRefreshButton.Location = new System.Drawing.Point(3, 239);
             this.processesRefreshButton.Name = "processesRefreshButton";
             this.processesRefreshButton.Size = new System.Drawing.Size(75, 23);
             this.processesRefreshButton.TabIndex = 6;
@@ -131,6 +137,7 @@ namespace CashClock
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelChosedProcesses.AutoSize = true;
+            this.labelChosedProcesses.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelChosedProcesses.Location = new System.Drawing.Point(3, 0);
             this.labelChosedProcesses.Name = "labelChosedProcesses";
             this.labelChosedProcesses.Size = new System.Drawing.Size(101, 15);
@@ -146,13 +153,16 @@ namespace CashClock
             this.chosedProcessesListBox.ItemHeight = 15;
             this.chosedProcessesListBox.Location = new System.Drawing.Point(3, 18);
             this.chosedProcessesListBox.Name = "chosedProcessesListBox";
-            this.chosedProcessesListBox.Size = new System.Drawing.Size(155, 139);
+            this.chosedProcessesListBox.Size = new System.Drawing.Size(214, 244);
             this.chosedProcessesListBox.TabIndex = 7;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(12, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 15);
             this.label1.TabIndex = 9;
@@ -161,7 +171,7 @@ namespace CashClock
             // addProcessButton
             // 
             this.addProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addProcessButton.Location = new System.Drawing.Point(86, 176);
+            this.addProcessButton.Location = new System.Drawing.Point(134, 239);
             this.addProcessButton.Name = "addProcessButton";
             this.addProcessButton.Size = new System.Drawing.Size(75, 23);
             this.addProcessButton.TabIndex = 10;
@@ -172,7 +182,7 @@ namespace CashClock
             // deleteProcessButton
             // 
             this.deleteProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteProcessButton.Location = new System.Drawing.Point(83, 176);
+            this.deleteProcessButton.Location = new System.Drawing.Point(142, 291);
             this.deleteProcessButton.Name = "deleteProcessButton";
             this.deleteProcessButton.Size = new System.Drawing.Size(75, 23);
             this.deleteProcessButton.TabIndex = 11;
@@ -185,16 +195,20 @@ namespace CashClock
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(12, 56);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 92);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.addByNameButton);
+            this.splitContainer1.Panel1.Controls.Add(this.addByNameTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.processesRefreshButton);
             this.splitContainer1.Panel1.Controls.Add(this.addProcessButton);
             this.splitContainer1.Panel1.Controls.Add(this.labelProcesses);
             this.splitContainer1.Panel1.Controls.Add(this.processesListBox);
             this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            this.splitContainer1.Panel1MinSize = 161;
             // 
             // splitContainer1.Panel2
             // 
@@ -202,23 +216,67 @@ namespace CashClock
             this.splitContainer1.Panel2.Controls.Add(this.chosedProcessesListBox);
             this.splitContainer1.Panel2.Controls.Add(this.labelChosedProcesses);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(329, 202);
-            this.splitContainer1.SplitterDistance = 164;
+            this.splitContainer1.Panel2MinSize = 161;
+            this.splitContainer1.Size = new System.Drawing.Size(436, 317);
+            this.splitContainer1.SplitterDistance = 212;
             this.splitContainer1.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(3, 273);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 15);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Add by name";
+            // 
+            // addByNameButton
+            // 
+            this.addByNameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addByNameButton.Location = new System.Drawing.Point(134, 291);
+            this.addByNameButton.Name = "addByNameButton";
+            this.addByNameButton.Size = new System.Drawing.Size(75, 23);
+            this.addByNameButton.TabIndex = 12;
+            this.addByNameButton.Text = "Add";
+            this.addByNameButton.UseVisualStyleBackColor = true;
+            this.addByNameButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // addByNameTextBox
+            // 
+            this.addByNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addByNameTextBox.Location = new System.Drawing.Point(3, 291);
+            this.addByNameTextBox.Name = "addByNameTextBox";
+            this.addByNameTextBox.Size = new System.Drawing.Size(125, 23);
+            this.addByNameTextBox.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(12, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Set your wage";
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 270);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.ClientSize = new System.Drawing.Size(456, 421);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.perLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.wageTextBox);
             this.Controls.Add(this.currencyTextBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(363, 317);
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
@@ -248,5 +306,11 @@ namespace CashClock
         private System.Windows.Forms.Button addProcessButton;
         private System.Windows.Forms.Button deleteProcessButton;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button addByNameButton;
+        private System.Windows.Forms.TextBox addByNameTextBox;
     }
 }

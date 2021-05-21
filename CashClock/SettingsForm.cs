@@ -18,13 +18,13 @@ namespace CashClock
             comboBox1.SelectedIndex = Settings1.Default.per;
             processesListBox.DisplayMember = "ProcessName";
             chosedProcessesListBox.DisplayMember = "ProcessName";
+            chosedProcessesListBox.DataSource = MainForm.choosedProcessesName;
             //chosedProcessesListBox.Items.AddRange(Settings1.Default.choosedProcesses);
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             refreshProcessCollections();
-            chosedProcessesListBox.DataSource = MainForm.choosedProcessesName;
         }
 
         private void refreshProcessCollections()
@@ -58,6 +58,10 @@ namespace CashClock
         private void processesListBox_MouseDoubleClick(object sender, EventArgs e)
         {
             MainForm.choosedProcessesName.Add(processesListBox.SelectedItem.ToString());
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm.choosedProcessesName.Add(addByNameTextBox.Text.ToString());
         }
 
         private void deletoProcessButton_Click(object sender, EventArgs e)
@@ -94,5 +98,7 @@ namespace CashClock
         {
             Settings1.Default.per = comboBox1.SelectedIndex;
         }
+
+
     }
 }
