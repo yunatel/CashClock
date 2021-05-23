@@ -11,9 +11,17 @@ namespace CashClock
 {
     public partial class MainForm : Form
     {
-        public static BindingList<string> choosedProcessesName = new BindingList<string>();
-        private bool releaseStopwatch;
 
+        private bool releaseStopwatch;
+        public class ProcessesList : BindingList<string>
+        {
+            public void AddS(string name)
+            {
+                if (!this.Contains(name))
+                    this.Add(name);
+            }
+        }
+        public static ProcessesList choosedProcessesName = new ProcessesList();
 
         private System.Diagnostics.Stopwatch stopWatch;
 
